@@ -1,10 +1,13 @@
 # ASP-Web-API-Angular-4-6
 Angular 4/5 - Asp.Net Web API Car Rental Front &amp;BackEnd
 ![home](https://user-images.githubusercontent.com/33725262/45802452-8fac2880-bcbf-11e8-83bc-88ac48219bf9.PNG)
+![contact](https://user-images.githubusercontent.com/33725262/45805770-18c75d80-bcc8-11e8-9ee0-4aef1a920c93.PNG)
+![about](https://user-images.githubusercontent.com/33725262/45805771-18c75d80-bcc8-11e8-86d1-f3f70d48052a.PNG)
 
 #  Login
 
-         
+ ![register](https://user-images.githubusercontent.com/33725262/45805764-182ec700-bcc8-11e8-8245-3f202424a01e.PNG) 
+ ![login](https://user-images.githubusercontent.com/33725262/45805772-18c75d80-bcc8-11e8-86cb-c2dd01886188.PNG)
              localStorage.setItem(this.TOKEN_KEY, authResponse.token)
              localStorage.setItem(this.NAME_KEY, authResponse.userName )
              localStorage.setItem(this.ADMIN_Key, authResponse.userTypeID)
@@ -15,12 +18,14 @@ Angular 4/5 - Asp.Net Web API Car Rental Front &amp;BackEnd
             this.toastr.error(error, 'close');
         }
  # Pipe search
- 
-Search 
-![search](https://user-images.githubusercontent.com/33725262/45802574-e87bc100-bcbf-11e8-9b8b-9cd7ea808a06.PNG)
+ ![carsearch](https://user-images.githubusercontent.com/33725262/45805765-182ec700-bcc8-11e8-988f-b3917932902a.PNG)
 
-Add Users
- ![order](https://user-images.githubusercontent.com/33725262/45802563-e154b300-bcbf-11e8-8941-e94560aa0515.PNG)
+Using Router-
+
+viewDetail(id){
+ this.router.navigate(['order-list', id]);
+} 
+![order](https://user-images.githubusercontent.com/33725262/45805769-18c75d80-bcc8-11e8-91f6-83168fe1dbef.PNG)
 
   transform(items: any[], field:string): any[] {
       
@@ -32,8 +37,10 @@ Add Users
     }
 # Show for Edit & Delete
 
+Add Users, Branchs, Cars..
+![user](https://user-images.githubusercontent.com/33725262/45805766-182ec700-bcc8-11e8-8011-9a1e32ff2799.PNG)
+![branch](https://user-images.githubusercontent.com/33725262/45805767-182ec700-bcc8-11e8-986e-c17c057baafd.PNG)
 
-![adduser](https://user-images.githubusercontent.com/33725262/45802588-ee71a200-bcbf-11e8-9521-64a1c149dba8.PNG)
      showForEdit(car: Cars){
         this.carService.selectedCar=Object.assign({}, car);
     }
