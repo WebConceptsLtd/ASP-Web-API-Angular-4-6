@@ -1,5 +1,8 @@
-# ASP-Web-API-Angular-4-6
-Angular 4/5 - Asp.Net Web API Car Rental Front &amp;BackEnd
+# Final project  - ASP-Web-API-Angular-4-6
+
+# Angular 4/6 Frontend -   &amp;BackEnd Asp.Net Web API Car Rental 
+Image upload and some other small issues are not finalized....
+
 ![home](https://user-images.githubusercontent.com/33725262/45802452-8fac2880-bcbf-11e8-83bc-88ac48219bf9.PNG)
 ![contact](https://user-images.githubusercontent.com/33725262/45805770-18c75d80-bcc8-11e8-9ee0-4aef1a920c93.PNG)
 ![about](https://user-images.githubusercontent.com/33725262/45805771-18c75d80-bcc8-11e8-86d1-f3f70d48052a.PNG)
