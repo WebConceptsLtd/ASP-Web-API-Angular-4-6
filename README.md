@@ -8,7 +8,8 @@ Angular 4/5 - Asp.Net Web API Car Rental Front &amp;BackEnd
 
  ![register](https://user-images.githubusercontent.com/33725262/45805764-182ec700-bcc8-11e8-8245-3f202424a01e.PNG) 
  ![login](https://user-images.githubusercontent.com/33725262/45805772-18c75d80-bcc8-11e8-86cb-c2dd01886188.PNG)
-             localStorage.setItem(this.TOKEN_KEY, authResponse.token)
+           
+           localStorage.setItem(this.TOKEN_KEY, authResponse.token)
              localStorage.setItem(this.NAME_KEY, authResponse.userName )
              localStorage.setItem(this.ADMIN_Key, authResponse.userTypeID)
             this.router.navigate(['/']);
@@ -17,33 +18,38 @@ Angular 4/5 - Asp.Net Web API Car Rental Front &amp;BackEnd
             console.error(error);
             this.toastr.error(error, 'close');
         }
+        
  # Pipe search
  ![carsearch](https://user-images.githubusercontent.com/33725262/45805765-182ec700-bcc8-11e8-988f-b3917932902a.PNG)
 
-Using Router-
-
-viewDetail(id){
- this.router.navigate(['order-list', id]);
-} 
-![order](https://user-images.githubusercontent.com/33725262/45805769-18c75d80-bcc8-11e8-91f6-83168fe1dbef.PNG)
-
-  transform(items: any[], field:string): any[] {
-      
+     
+     transform(items: any[], field:string): any[] {
         if (!field || !field) {
             return items;
         }
-        return items.filter(singleItem =>singleItem.fullName.toLowerCase().indexOf(field.toLowerCase())!==-1);
-        
+        return items.filter(singleItem =>singleItem.model.toLowerCase().indexOf(field.toLowerCase())!==-1);  }
+
+#Using Router-
+
+viewDetail(id){
+ this.router.navigate(['order-list', id]);
+}
+
+![order](https://user-images.githubusercontent.com/33725262/45805769-18c75d80-bcc8-11e8-91f6-83168fe1dbef.PNG)
+
+
+#To mirror selected car detail to a form
+   
+   showForEdit(car: Cars){
+        this.carService.selectedCar=Object.assign({}, car);
     }
+
 # Show for Edit & Delete
 
 Add Users, Branchs, Cars..
 ![user](https://user-images.githubusercontent.com/33725262/45805766-182ec700-bcc8-11e8-8011-9a1e32ff2799.PNG)
 ![branch](https://user-images.githubusercontent.com/33725262/45805767-182ec700-bcc8-11e8-986e-c17c057baafd.PNG)
 
-     showForEdit(car: Cars){
-        this.carService.selectedCar=Object.assign({}, car);
-    }
   
 Using: import { ToastrService } from 'ngx-toastr' 
 
