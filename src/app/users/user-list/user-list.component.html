@@ -1,0 +1,55 @@
+
+                    
+       <div class="row">
+              <div>
+                    <h3 class="admin-list-all">All Customers</h3>
+                </div>
+        </div>
+        <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search By Name"
+                        style="width:300px" [(ngModel)]="searchTerm" />
+            </div>
+          
+
+ <div class="row">
+  <div class="col-md-10 table-scrolling">      
+            <table class="admin-table table table-hover  ">
+                     <tr>
+                            <th scope="col">UserID</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">UserName</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">User Type</th>
+                            <th scope="col">SSN</th>
+                            <th scope="col">BirthDate</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Is Valid User</th>
+               
+                            <th>Edit</th>
+                     </tr> 
+                     <tbody> 
+            <tr *ngFor="let user of userService.userList | searchfilter: searchTerm">
+                <td>{{user.userID}}</td>
+                <td>{{user.fullName}}</td>
+                <td>{{user.userName}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.userTypeID}}</td>
+                <td>{{user.teudatZeut}}</td>
+                <td>{{user.birthday}}</td> 
+                <td>{{user.phone}}</td> 
+                <td>{{user.isValidUSer}}</td>
+              
+                <!-- td> <h3>{{errorMsg}}</h3></td> -->
+               <td><a class="btn" (click)="showEdit(user)">
+                <i class="fa fa-pencil-square-o"></i>
+                </a>
+                <a class="btn text-danger" (click)="delete(user.userID)">
+                  <i class="fa fa-trash-o"></i>
+                </a></td> 
+            </tr>
+        </tbody>
+     </table>
+    </div>
+   </div>

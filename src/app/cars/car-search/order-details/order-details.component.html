@@ -1,0 +1,100 @@
+
+ <div class="card"> 
+     
+        
+            <form #orderForm1="ngForm" (ngSubmit)="onSubmit(orderForm1)"> 
+                 
+                 <div class="row">
+                  <div class="row-group col-lg-10">
+                      <div class="row date" style="text-align: center"><h3>Pick a Date</h3></div>
+                                <div>
+                                    <input type="hidden" #OrderID="ngModel" name="orderID"
+                                     [(ngModel)]="orderID" placeholder="OrderID">  
+                                </div> 
+                              <div class="form-group" style="float:left; margin-right: 25px;">
+                                    <input class="form-control" type="date" #StartDate="ngModel" name="startDate" 
+                                     [(ngModel)]="startDate"  required>
+                                 </div> 
+                                 <div class="form-group" style="float:left; margin-right: 25px;">
+                                     <input type="date" class="form-control" #FinishDate="ngModel" name="finishDate"
+                                     [(ngModel)]="finishDate" required>
+                                 </div>                
+                                <div class="form-group">  <label for="carID"></label>
+                                    <input  class="form-control" #CarID="ngModel" name="carID"  [(ngModel)]="carService.selectedCar.carID" placeholder="CarID">
+                                </div>
+                                <div class="form-group">
+                                        <div class="form-group">
+                                                <div class="row">Branch Name <input class="form-control"  name="name" #Name="ngModel" [(ngModel)]="carService.selectedCar.branch.name" ></div>
+                                            </div>
+                                    <div class="row">Model<input  class="form-control" name="model" #Model="ngModel" [(ngModel)]="carService.selectedCar.carType.model"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">Brand<input  class="form-control" name="brand" #Brand="ngModel" [(ngModel)]="carService.selectedCar.carType.brand"></div>
+                                            </div>
+                                    <div class="col-auto">
+                                                    <label class="sr-only" for="inlineFormInputGroup"></label>
+                                                    Price Per Day
+                                            <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                    <div class="input-group-text">$</div>
+                                                  </div> 
+                                    <input  class="form-control" type="number" name="pricePerDay" #PricePerDay="ngModel" [(ngModel)]="carService.selectedCar.carType.pricePerDay">
+                                       </div>
+                                     </div>
+                                <div class="form-group">  <label for="userID"></label>
+                                    <input  class="form-control" #UserID="ngModel" name="userID"  [(ngModel)]="userID" placeholder="UserID">
+                                </div>
+                              
+                                 
+                              </div>
+                    </div>
+                      
+         
+                             <!-- days -->
+                   <div class="card col-lg-10">
+                       <div class="row">
+                            <div class="form-row col-lg-4">
+                                <label class="form-control">Days</label>
+                            </div>
+                            <div class="form-row col-lg-4">
+                                <label class="form-control">{{daysNumber}}</label>
+                            </div>
+                      
+                            <!-- <div class="form-row col-lg-4">
+                                    <label class="form-control" >{{totalPrice}}={{daysNumber}}*{{car.carType?.pricePerDay}}</label>
+                                </div> -->
+                            <div class="form-row col-lg-4">
+                                <label class="form-control">Price Per Day</label>
+                            </div>
+                            <div class="form-row col-lg-4">
+                                <label class="form-control">{{carService.selectedCar.carType?.pricePerDay}}</label>
+                            </div>
+                            <div class="form-row col-lg-4">
+                                    <label class="form-control">Total</label>
+                                </div>
+                            <div class="form-row col-lg-4">
+                                <label class="form-control">{{carService.selectedCar.carType?.pricePerDay*daysNumber}}</label>
+                           </div>
+                        
+                        </div>
+                    
+                           <div class="row">
+                                 <button type="button" class="btn btn-lg btn-block btn-secondary"
+                            (click)="sumPrice(orderForm1)">Calculate</button>
+                            </div>
+                            <div>
+                                    <button [disabled]="!orderForm1.valid" type="submit" class="btn btn-lg btn-block btn-info">
+                                    <i class="fa fa-floppy-o"></i>Order Now</button>
+                            </div>
+                      
+                              
+                </div>
+            </form>
+            
+        </div>  
+
+
+         
+    
+    
+    

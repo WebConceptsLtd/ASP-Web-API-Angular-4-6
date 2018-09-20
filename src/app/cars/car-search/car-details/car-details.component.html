@@ -1,0 +1,50 @@
+ <div class="container">
+          <div>
+            <h3>Vehicle Models <span>For Rent</span></h3>
+            <p>Choose the right car the best cars are sort by need and family size</p>
+          </div>
+          <div>
+                <div class="col-md-3">
+                 
+                    <div>ModernLine</div>
+                    <div> <h3>{{carService.selectedCar.carType?.brand}} -
+                              {{carService.selectedCar.carType?.model}}
+                           </h3>
+                    </div>
+                    <div class="carPrice" ><strong>$ {{carService.selectedCar.carType?.pricePerDay}}</strong> <span>/Day</span> </div>
+                    <!-- <a  routerLink="order-details/{{cars.carID}}"  class="btn">{{cars.carID}} -->
+                        <!-- <a class="btn" (click)="showForEdit(car)" >
+                            <i class="fa fa-pencil-square-o">add</i>
+                        </a> -->
+                        <button  type="submit" class = "btn" (click)="goBack()">{{carService.selectedCar.carID}}<i class="fa fa-calendar"></i>Back To List</button>
+                 </div>
+                
+                <div class="row align-items-center single-model item">
+                    <div class="col-lg-6 model-left">
+                    <img class="" src="assets/01.jpg" alt="Card image cap"> 
+                    </div>
+                
+                   <div class="col-lg-6 model-right vehiclesList">
+                      <ul>  {{carService.selectedCar.barnch?.branchID}}
+                            <li> Branch: <strong>{{carService.selectedCar.branch?.name}}</strong></li>
+                            <li> Branch Address: <strong>{{carService.selectedCar.branch?.address}}</strong></li>
+                            <li>Doors: <strong>4</strong></li>
+                            <li>Passengers: <strong>5</strong></li>
+                            <li>Luggage: <strong>2 Bags</strong></li>
+                            <li>Transmission Manual: <strong>{{carService.selectedCar.carType?.isManual}}</strong></li>
+                            <li>Air conditioning: <strong>Dual Zone</strong></li>
+                            <li>Year: <strong>{{carService.selectedCar.carType?.year}} </strong></li>
+                            <li>Availablelity: <strong>{{carService.selectedCar.isAvailable}}</strong></li>
+                            <li>Minimum age: <strong>25 years</strong></li>
+                            <li> Mileage: <strong>{{carService.selectedCar.km}}</strong></li>
+                      </ul>
+                    </div>
+             
+                </div>
+
+            <div>
+            <button  class="btn btn-info" style="float: right" (click)="goBack()">Back to List</button>
+            </div>
+            
+     </div>
+            

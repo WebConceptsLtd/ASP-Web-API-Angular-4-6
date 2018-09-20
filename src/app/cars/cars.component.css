@@ -1,0 +1,34 @@
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    width: 32%;
+    height:200px;
+    text-align: center;
+   
+   float: left;
+   
+}
+
+div.gallery:hover {
+    border: 2px solid #4caf50;
+}
+
+div.gallery img {
+   max-width: 100%;
+
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+    background-color:#f3f4f5;
+}
+.me{
+    float: left;
+    width: 90%;
+    text-align: center;
+    margin-left: 4%;
+}
+.list{
+    margin:100px;
+}

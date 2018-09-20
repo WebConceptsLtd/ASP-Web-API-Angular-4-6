@@ -1,0 +1,28 @@
+main-panel .footer {
+    border-top: 1px solid #e7e7e7;
+}
+.footer {
+    display: block;
+    width: 100%;
+   margin-top: 20px;
+   float: left;
+   background:#f9c200;
+}
+li{
+    list-style-type: none;
+    padding-right: 15px;
+    color: #000;
+    display: block;
+    float: left;
+}
+.belmondo{
+    background:#f9c200;
+}
+.copyright{
+    display: block;
+}
+li.fbar{
+  
+    list-style-type: none;
+    padding: 5px;
+}

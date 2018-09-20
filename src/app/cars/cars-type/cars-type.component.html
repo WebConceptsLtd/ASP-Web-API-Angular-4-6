@@ -1,0 +1,74 @@
+
+<div class="card rounded-1">
+<div class="card-header">
+<h3></h3>
+</div>
+<div class="card-body">
+    <form #carTypeForm="ngForm" (ngSubmit)="onSubmit(carTypeForm)">
+                 <div class="form-group">
+                    <div class="row"> <img alt="car" src="assets/car4.jpg"></div>
+                </div> 
+                
+                <div class="form-group">
+                    <div class="row">Car Type ID<input  class="form-control" name="carTypeID" #CarTypeID="ngModel" [(ngModel)]="carTypeService.selectedCarType.carTypeID"></div>
+                </div>
+                    <div class="form-group">
+                    <div class="row">Model<input  class="form-control" name="model" #Model="ngModel" [(ngModel)]="carTypeService.selectedCarType.model"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">Brand<input  class="form-control" name="brand" #Brand="ngModel" [(ngModel)]="carTypeService.selectedCarType.brand"></div>
+                            </div>
+                    <div class="col-auto">
+                                    <label class="sr-only" for="inlineFormInputGroup"></label>
+                                    Price Per Day
+                            <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                    <div class="input-group-text">$</div>
+                                  </div> 
+                    <input  class="form-control" type="number" name="pricePerDay" #PricePerDay="ngModel" [(ngModel)]="carTypeService.selectedCarType.pricePerDay">
+                       </div>
+                     </div>
+              
+                
+                    <div class="col-auto">
+                    <label class="sr-only" for="inlineFormInputGroup"></label>
+                    Extra Per Day
+                        <div class="input-group mb-2">
+                   <div class="input-group-prepend">
+                        <div class="input-group-text">$</div>
+                    </div>
+                        <input type="number" class="form-control" name="priceExtraPerDay" #PriceExtraPerDay="ngModel" [(ngModel)]="carTypeService.selectedCarType.priceExtraPerDay">
+                       
+                            </div>
+                            </div>
+                            <div class="col-auto my-1">Year
+                                   <input type="number" class="form-control" name="year" #Year="ngModel" [(ngModel)]="carTypeService.selectedCarType.year"></div>
+                                   
+      
+                                    <div class="col-auto my-1">
+                                           
+                                        <select  class="custom-select" name="isManual" #IsManual="ngModel" [(ngModel)]="carTypeService.selectedCarType.isManual">
+                                            <option selected>select...</option>
+                                            <option value=false>Automatic</option>
+                                            <option value=true>Manual</option></select>
+                                     </div> 
+                                  <!-- <div class="row"> <input class="form-control" name="isAvailable" #IsAvailable="ngModel" [(ngModel)]="cars.selectedCar.isAvailable" placeholder="IsAvailable" required>
+
+                                </div>  
+                                <div class="form-group">
+                                        <div class="row">BranchID <input class="form-control"  name="branchID" #BranchID="ngModel" [(ngModel)]="branch.selectedCar.branchID" ></div>
+                                    </div>  -->
+                    <!-- buttons -->
+                <div class="row">
+                        <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(carTypeForm)">
+                            <i class="fa fa-repeat"></i> Reset
+                        </button>
+                </div>
+                <div class="row">
+                            <button [disabled]="!carTypeForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
+                                <i class="fa fa-floppy-o"></i>Submit</button> 
+                </div>
+    </form>
+</div>
+
+</div>

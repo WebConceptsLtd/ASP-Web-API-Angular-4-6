@@ -1,0 +1,34 @@
+
+
+<!-- Search cars -->
+
+ 
+      <div class="row">   
+            <input type="text" class="form-control" placeholder="Search By Brand"
+        style="width:300px" [(ngModel)]="searchTerm2" />
+       </div>
+   
+    
+    <!-- card -->
+    <div class="row">
+            <div class="col-sm-3" *ngFor="let cars of  carService.carList   | searchfilter2: searchTerm2">
+       <div class="card" style="width: 20rem;">
+                     <img class="card-img-top imageClass" src="assets/01.jpg" alt="Card image cap"> 
+                 <div class="card-body" > {{cars.carID}}
+                        <h5 class="card-title"> {{cars.carType.brand}} - {{cars.carType.model}}</h5>
+                        <p class="card-text">Price : {{cars.carType.pricePerDay | currency:'ILS':true:'2.2'}}</p>
+                        <p class="card-text">Exra Per Day : {{cars.carType.priceExtraPerDay | currency:'ILS':true:'2.2'}}</p>
+                        <p class="card-text">Year : {{cars.carType.year}}</p> 
+                        <p class="card-text">Manual gearbox: {{cars.isManual}}</p>
+                        <p>Location: {{cars.branch.name}}</p>
+                        <div class="card-footer">    
+                             <small class="text-muted">Last updated 3 mins ago</small>
+                             <!-- <button  type="submit" class = "btn btn-sm btn-primary" (click)="viewDetail(cars.carID)"><i class="fa fa-angle-right" aria-hidden="true"></i>  View More Details</button> -->
+                            <a routerLink="/make-order">  <button  class="btn" (click)="showForEdit(cars)">
+                                   <i class="fa fa-pencil-square-o" >ADD TO CART</i></button></a> 
+                        </div>   
+                  </div> 
+               </div>
+         </div>
+     </div>
+                      

@@ -1,0 +1,36 @@
+
+    <div class="row">
+        <div class="table-scrolling">      
+    <table class="admin-table table table-hover">
+            <tr>
+                    <th scope="col">CarType ID</th>
+                    <th scope="col">brand</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Gear</th>
+                    <th scope="col">Per day</th>
+                    <th scope="col">ExtraPerDay</th>
+                    <th scope="col">Edit</th>
+                </tr>
+    <tbody>
+    <tr *ngFor="let cartype of carTypesService.carTypelist" >
+        <td >{{cartype.carTypeID}}</td>
+        <td >{{cartype.brand}}</td>
+        <td >{{cartype.model}}</td> 
+        <td >{{cartype.year}}</td>
+        <td >{{cartype.isManual}}</td>
+        <td >{{cartype.pricePerDay | currency:'USD':true:'1.0-2'}}</td>
+    <td >{{cartype.priceExtraPerDay | currency:'USD':true:'1.0-2'}}</td>
+           <td>
+            <a class="btn" (click)="showForEdit(cartype)">
+                    <i class="fa fa-pencil-square-o"></i>
+            </a> 
+            <a class="btn text-danger" (click)="onDelete(cartype.carTypeID)">
+            <i class="fa fa-trash-o"></i>
+            </a>
+    </td> 
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>

@@ -1,0 +1,50 @@
+
+    <mat-card>  
+        <mat-card-title>  
+           Registation   
+        </mat-card-title>   
+        <mat-card-content>  
+            <form class="fr-container" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">  
+        
+                            <mat-form-field class="full-width">  
+                                <input matInput  [ngClass]="{'error': isValid('userName')}" formControlName="userName" placeholder="User Name">  
+                            </mat-form-field> 
+                           
+                            <mat-form-field class="full-width">  
+                                <input matInput  [ngClass]="{'error': isValid('fullName')}" formControlName="fullName" placeholder="Full Name">  
+                            </mat-form-field> 
+                            <mat-form-field class="full-width">  
+                                <input formControlName="birthday" matInput [matDatepicker]="picker" placeholder="Date of birth">  
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>  
+                                <mat-datepicker touchUi="true" #picker></mat-datepicker>  
+                            </mat-form-field>  
+                            <span style="margin-bottom: 20px">Gender</span>
+                            <mat-radio-group formControlName="gender" >  
+                                <mat-radio-button value="M" style="margin-right: 25px">Male</mat-radio-button>  
+                                <mat-radio-button value="F">Female</mat-radio-button>  
+                            </mat-radio-group> 
+                                <mat-form-field>
+                                        <input matInput [ngClass]="{'error': isValid('teudatZeut')}" type="number"   placeholder="SSN" formControlName="teudatZeut">
+                                   </mat-form-field>
+                                  
+                            <mat-form-field>
+                                    <input matInput [ngClass]="{'error': isValid('email')}" type="email"   placeholder="Email" formControlName="email">
+                            </mat-form-field>  
+                         <mat-form-field>
+                            <input  matInput [ngClass]="{'error': isValid('password')}"  placeholder="Password"  formControlName="password" [type]="hide ? 'password' : 'text'">
+                            <i class="material-icons">
+                                    {{hide ? 'visibility' : 'visibility_off'}}
+                                    </i>
+                    </mat-form-field>
+                        <mat-form-field>
+                                <input  matInput  [ngClass]="{'error': isValid('confirmPassword')}" type="password"placeholder="Confirm Password" formControlName="confirmPassword">
+                     </mat-form-field>    
+                        
+                <br>
+                <span *ngIf="!form.errors?.mismatchedFields">Passwords do not match</span>
+                <br>
+                <button class="btn btn-lg btn-block btn-info" [disabled]="!form.valid">Register</button>
+             
+            </form>  
+        </mat-card-content>  
+    </mat-card> 

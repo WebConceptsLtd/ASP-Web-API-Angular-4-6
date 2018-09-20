@@ -1,0 +1,49 @@
+
+          <nav class="navbar">
+    <div class="container">
+        <div class="name">
+        Hello, {{getUserName()}}
+        </div>
+        
+    </div>  
+
+    <ul  class="sidenav">
+        <div class="icon-bar">
+            <a href="/home" class="brand-logo center ">
+                    <i class="material-icons">cloud</i>Admin</a></div>
+   
+        <li class="nav-item">
+          <a routerLink='/cartype'  routerLinkActive="active">Add & Search Car</a>
+          </li>
+         
+        <li class="nav-item">
+                <a routerLink='/car' routerLinkActive="active">Add & Search CarType</a> 
+            
+        </li>
+        <li class="nav-item">
+          <a routerLink='/order' routerLinkActive="active">Add Order</a>
+        </li>
+
+      <li class="nav-item">
+      <a routerLink='/branch' routerLinkActive="active">Add Branch</a>
+      </li>
+
+    <li class="nav-item">
+         <a routerLink='/display-user' routerLinkActive="active">Users Detail List</a>
+     </li>
+    <li class="nav-item">
+        <a routerLink='/user' routerLinkActive="active">Add Update User</a>
+    </li>
+    <!-- <li class="nav-item">
+        <a routerLink='/imageupload' routerLinkActive="active">Image upload not done</a>
+    </li> -->
+    </ul>
+<div class="row" *ngIf="userClaims">
+  <div class="col s12 m7">
+  <div class="card-content">
+        <span class="loggedOn">Logged In: {{userClaims.LoggedOn}}</span>
+      </div>
+  </div> 
+</div> 
+
+</nav>

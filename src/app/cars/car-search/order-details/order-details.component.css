@@ -1,0 +1,122 @@
+.row1{
+    margin-left: 10%;
+}
+.row.detail{
+    color:rgb(109, 109, 104);
+     font-weight: 600;
+ }
+ img {
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+}
+.row.date{display: block;
+    text-align: center;
+    /* font-size: 22px; */
+    font-weight: 300;
+    /* margin-left: 20%; */
+    background-color: #ccc;}
+
+.list{
+    margin:100px;
+}
+form{
+   margin: 15%;
+}
+/* calender */
+button.btn.btn-default {
+    position: absolute;}
+ 
+input.form-control {
+        text-align: right;
+    }
+    .form-row {
+        margin-right: 10px;
+    }
+    
+img {
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+}
+
+a {
+    transition: ease-in-out 0.3s;
+    -webkit-transition: ease-in-out 0.3s;
+    -moz-transition: ease-in-out 0.3s;
+    -ms-transition: ease-in-out 0.3s;
+    color: #f9c200;
+    text-decoration: none !important;
+
+}
+
+.VehiclesList ul li .btn {
+    display: block;
+    background: #333;
+    margin-top: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 15px 30px;
+    font-size: 18px;
+    float: right;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+   margin-top: 10px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background:#000;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color:#f9c200;
+}
+a {
+    transition: ease-in-out 0.3s;
+    -webkit-transition: ease-in-out 0.3s;
+    -moz-transition: ease-in-out 0.3s;
+    -ms-transition: ease-in-out 0.3s;
+    color: #f9c200;
+    text-decoration: none !important;
+}
+
+a {
+    background-color: transparent;
+}
+
+.carPrice strong {
+    font-size: 48px;
+    line-height: 48px;
+}
+.vehiclesList ul li .subtitle:after {
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    background: #f9c200;
+    content: '';
+    left: 0;
+    bottom: 0;
+}
+.vehiclesList ul li .subtitle {
+    color: #888;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 20px;
+}
+b, strong {
+    font-weight: 700;
+}

@@ -1,0 +1,21 @@
+.row1{
+    margin-left: 10%;
+}
+ 
+
+.list{
+    margin:100px;
+}
+form{
+   margin: 15%;
+}
+/* calender */
+button.btn.btn-default {
+    position: absolute;}
+ 
+input.form-control {
+        text-align: right;
+    }
+    .form-row {
+        margin-right: 10px;
+    }

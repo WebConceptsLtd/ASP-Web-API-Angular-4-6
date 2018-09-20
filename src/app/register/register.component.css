@@ -1,0 +1,12 @@
+.fr-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin:0 auto;
+}
+.fr-container > * {
+    width: 100%;
+  }
+.form-group.fld{
+    padding: 10px;;
+}

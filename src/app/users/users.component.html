@@ -1,0 +1,87 @@
+
+
+
+<div class="card rounded-1" style="margin-top: 20px;">
+
+        <div class="card-header">
+        <h2 >Users Services</h2>
+        </div>
+
+    <div>
+            <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+                
+                        <div class="form-group col-md-5">
+                        <input type="hidden" name="userID" #userID="ngModel" [(ngModel)]="userService.selectedUser.userID" placeholder="UserID">
+                        </div>
+                        <div class="form-row">
+                        <div class="form-group col-md-8">Full Name
+                            <input class="form-control" name="fullName" #fullName="ngModel" [(ngModel)]="userService.selectedUser.fullName" placeholder="Full Name" required>    
+                        </div>
+              
+                        <div class="form-group col-md-3">User Type
+                                <select class="custom-select" name="userTypeID" #userType="ngModel" [(ngModel)]="userService.selectedUser.userTypeID" placeholder="usert type">
+                                    <option value=1>user</option>
+                                    <option value=2>admin</option>
+                                </select>
+                        </div>
+              </div>
+              <div class="form-row">
+                    <div class="form-group col-md-8">BDate
+                        <input class="form-control" type="date" name="birthday" #birthday="ngModel"  [(ngModel)]="userService.selectedUser.birthday" placeholder="Birthday" required>
+                    </div>
+                    <div class="form-group col-md-3">Gender
+                            <select class="custom-select" name="gender" #gender="ngModel" [(ngModel)]="userService.selectedUser.gender" placeholder="Gender">
+                                <option value="F">F</option>
+                                <option value="M">M</option>
+                            </select>
+                    </div>
+            </div>
+         
+           <div class="form-row">
+                <div class="form-group col-md-8">
+                   Email <input class="form-control" #email="ngModel" name="email" [(ngModel)]="userService.selectedUser.email" placeholder="Email">
+                </div>
+              
+                <div class="form-group col-md-3">
+                    Active  <select class="custom-select" name="isValidUSer" #isValidUSer="ngModel" [(ngModel)]="userService.selectedUser.isValidUSer" placeholder="Active">
+                    <option value="true">Yes</option>
+                    <option value="false">Not</option>
+                    </select>
+                </div>
+            </div>
+              <div class="form-row">
+                    <div class="form-group col-md-6">SSN#  <input class="form-control" type="number" name="teudatZeut" #teudatZeut="ngModel" [(ngModel)]="userService.selectedUser.teudatZeut" placeholder="SSN">
+                    </div>
+                  
+                    <div class="form-grou col-md-6">Phone  <input class="form-control" type="number" name="phone" #phone="ngModel" [(ngModel)]="userService.selectedUser.phone" placeholder="Phone">
+                    </div>
+             </div>
+             
+                <div class="form-row">
+
+                        <div class="form-group col-md-6">UserName
+                            <input class="form-control"  name="userName" #userName="ngModel" [(ngModel)]="userService.selectedUser.userName" placeholder="UserName">
+                        </div>
+                         <div class="form-group col-md-6">Password
+                            <input class="form-control validate" type="password" name="Password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" required minlength="4">
+                            <label [attr.data-error]="Password.errors!=null?(Password.errors.required?'Required field!':'Minimum 4 characters needed'):''"></label>
+                          </div>
+                </div>
+               
+                    <div class="form-group ">
+                    
+                            <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(userForm)">
+                        <i class="fa fa-repeat"></i>Reset</button>
+                     
+
+                                <button [disabled]="!userForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
+                                                <i class="fa fa-floppy-o"></i>Submit</button>
+                           
+                     </div>
+       </form>
+    </div>     
+</div>                      
+                                                                           
+
+
+            

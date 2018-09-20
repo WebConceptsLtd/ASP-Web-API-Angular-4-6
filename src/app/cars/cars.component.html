@@ -1,0 +1,52 @@
+
+<div class="card rounded-1">
+    
+                <div class="card-header">
+                <h3 class="mb-0"></h3>
+                </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <div class="row"> <img width="200" height="160" alt="car" src="assets/car4.jpg"></div>
+                </div>
+                <form #carForm="ngForm" (ngSubmit)="onSubmit(carForm)">
+                    
+                        
+                            <div class="form-group">
+                                    <div class="row"> <input type="hidden"   name="carID" #CarID="ngModel" [(ngModel)]="carService.selectedCar.carID" ></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">CarTypeID<input  class="form-control"  name="carTypeID" #CarTypeID="ngModel" [(ngModel)]="carService.selectedCar.carTypeID" ></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">BranchID <input class="form-control"  name="branchID" #BranchID="ngModel" [(ngModel)]="carService.selectedCar.branchID" ></div>
+                                </div>
+                        <div class="form-group">
+                            Car #
+                                <div class="row"> <input class="form-control" type="number" name="carNum" #CarNum="ngModel" [(ngModel)]="carService.selectedCar.carNum" placeholder="Car Number" required></div>
+                        </div>
+                      
+                        <div class="form-group">
+                                <div class="row">Fix <input class="form-control" name="isFix" #IsFix="ngModel" [(ngModel)]="carService.selectedCar.isFix" placeholder="Is it Fix" required></div>
+                        </div>
+                          <div class="form-group">
+                                <div class="row"> Available<input class="form-control" name="isAvailable" #IsAvailable="ngModel" [(ngModel)]="carService.selectedCar.isAvailable" placeholder="IsAvailable" required></div>   
+                         </div> 
+                        <div class="form-group">
+                            <div class="row">Milles<input type="text" class="form-control" name="km" #KM="ngModel" [(ngModel)]="carService.selectedCar.km" placeholder="KM" required></div> 
+                         </div> 
+                          <div class="form-group">
+                            <div class="row">Picture<input type="text" class="form-control" name="carPic" #CarPic="ngModel" [(ngModel)]="carService.selectedCar.carPic" placeholder="picture" required></div> 
+                         </div>  
+                        <div class="row">
+                                <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(carForm)">
+                                    <i class="fa fa-repeat"></i> Reset
+                                </button>
+                        </div>
+                        <div class="form-row">
+                                    <button [disabled]="!carForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
+                                 <i class="fa fa-floppy-o"></i>Submit</button> 
+                        </div>
+                
+                   </form>
+                </div>
+              </div>   

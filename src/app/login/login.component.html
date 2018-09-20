@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="login1">
+              <h4 class="form-header">LogIn
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+              </h4>
+      
+     <div class="form-group"> 
+     <div class="row">  <i class="material-icons">account_circle</i>
+        <label for="userName">User Name</label></div>
+       <input [(ngModel)]="loginData.UserName" class="form-control"  name="userName" aria-describedby="unHelp" id="userName"placeholder="email" required>
+       <small id="unHelp" class="form-text text-muted">We'll never share your details with anyone else.</small>
+    </div>
+    <div class="form-group"><div class="row">
+            <i class="material-icons">vpn_key</i>  
+            <label for="password">Password</label></div>
+        
+            <input  class="form-control" type="password" [(ngModel)]="loginData.Password"  id="password" autocomplete="new-password" minlength="4" placeholder="Password" required>
+            <!-- <div class="form-error" *ngIf="password.touched && !password.valid">
+                    <div *ngIf="password.errors.required">
+                        Password is required
+                    </div>
+                    <div *ngIf="password.errors.minlength">
+                        Password must be atleast 4 characters long
+                    </div>
+                </div> -->
+        </div>
+    
+         <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="checkme">
+                <label class="form-check-label" for="checkme">Check me out</label>
+         </div>
+         <div class="row">
+              <button  (click)="login()" class="btn btn-primary" type="submit">Login</button>
+           </div>
+           <p class="alter-way"><a [routerLink]="'/register'">Create a new account</a></p>  
+  
+</div>
+

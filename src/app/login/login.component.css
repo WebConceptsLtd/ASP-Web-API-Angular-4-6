@@ -1,0 +1,21 @@
+.line{
+    height: 100px;
+}
+.login1{
+    width:500px;
+    padding-top: 7%;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+a:hover:not(.active) {
+    background-color:yellow;
+    color: #fff;}
+.link:a{
+    text-align: center;
+}
+loginForm{
+   
+   padding-bottom:  50px;
+
+}

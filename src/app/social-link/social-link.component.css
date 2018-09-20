@@ -1,0 +1,43 @@
+.icon-facebook{
+   color:  #3b5998
+}
+.icon-twitter{
+    color:#4dc8f1;
+}
+.icon-instagram{
+    color: #3e739d;
+    background: #4dc8f1;
+    display: block;
+    height: 50px;
+    width: 100px;
+    border: 2px;
+}
+.icon-github{color:#4183C4;}	
+.icon-rss{color:#f88b02;}
+.social-links{display:inline-block; position: relative;
+}
+
+.nav-item.active {
+    background-color: #4CAF50;
+    color: white;
+}
+.nav-item a:hover {
+    background-color: #ddd;
+   
+}
+.navbar-nav-right-a a{
+   
+    padding: 20px;
+    color: #fff;
+}
+.nav-item a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    .nav-item{
+    background-color: #333;
+    overflow: hidden;}

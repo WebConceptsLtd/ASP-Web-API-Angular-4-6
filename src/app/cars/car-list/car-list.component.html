@@ -1,0 +1,54 @@
+<div class="row">
+      
+    <div >
+        <h3 class="admin-list-all"> All Cars </h3>
+    </div>
+</div>
+<div class="row">
+    <div class="table-scrolling">      
+        <table class="admin-table table table-hover">
+            <tr>
+                <th scope="col">CarID</th>
+                <th scope="col">CarTypeID</th>
+                <th scope="col">Branch</th>
+               
+                <th scope="col">Miles</th>
+                <th scope="col">Working</th>
+                <th scope="col">Available</th>
+                <th scope="col">Photo</th></tr>
+                <tbody>
+                <tr *ngFor="let car of carService.carList" >
+             
+                    <td>{{car.carID}}</td>
+                    
+                    <td>{{car.carTypeID}}</td>
+                    
+                    <td>{{car.branch.branchID}}</td>
+           
+                    <!-- <td>{{car.carNum}}</td> -->
+            
+                    <td>{{car.km}}</td>
+            
+                    <td>{{car.isFix}}</td>
+           
+                    <td>{{car.isAvailable}}</td>
+            
+                    <!-- <td>{{car.carPic}}</td> -->
+                    <td><img class="img"alt="" width="150px" height="150px" src="assets/car1.jpg" /></td>
+     
+                    <!-- <h3>{{errorMsg}}</h3> -->
+        
+                    <td>
+                        <a class="btn" (click)="showForEdit(car)">
+                            <i class="fa fa-pencil-square-o"></i>
+                        </a>
+                        <a class="btn text-danger" (click)="onDelete(car.carID)">
+                            <i class="fa fa-trash-o">delete</i>
+                        </a>
+                    </td>
+                  
+                  </tr>
+                </tbody>
+        </table>
+    </div>
+</div>

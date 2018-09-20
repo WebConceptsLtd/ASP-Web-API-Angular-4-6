@@ -1,0 +1,32 @@
+
+<div class="row">
+    <div class="col-md-10 table-scrolling"> 
+        <table class="table table-sm table-hover">
+        
+                <tr>
+                    <th scope="col">BranchID</th>
+                    <th scope="col">Branch Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Latitude</th>
+                    <th scope="col">Longtitude</th>
+                    <th>Edit</th>
+                </tr>
+         
+           
+              <tr *ngFor="let branch of branchServ.branchesList">
+                <td>{{branch.branchID}}</td><td>{{branch.name}}</td><td>{{branch.address}}</td>
+                <td>{{branch.latitude}}</td><td>{{branch.longtitude}}</td>
+                <td>
+                  <a class="btn" (click)="showForEdit(branch)">
+                    <i class="fa fa-pencil-square-o"></i>
+                  </a>
+                  <a class="btn text-danger" (click)="onDelete(branch.branchID)">
+                    <i class="fa fa-trash-o"></i>
+                  </a>
+                </td>
+              </tr>
+            
+            </table>
+               
+    </div>
+</div>

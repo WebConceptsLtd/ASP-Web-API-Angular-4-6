@@ -1,0 +1,48 @@
+<div class="row1">
+   
+    <div class="col-md-9">
+        <h3> All Orders </h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10 table-scrolling">  
+        <table class="admin-table table table-sm table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Order Id</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">finish Date</th>
+                    <th scope="col">returned</th>
+                    <th scope="col">UserID</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">CarID</th>
+                    <th scope="col">Car#</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Branch</th>
+                    <th scope="col">edit</th>
+                </tr>
+            </thead>
+            <tr *ngFor="let order of orderService.ordersList">
+                <td>{{order.orderID}}</td>
+                <td>{{order.startDate | date}}</td>
+                <td>{{order.finishDate | date}}</td>
+                <td>{{order.returned | date}}</td>
+                <td>{{order.userID}}</td>
+                <td>{{order.user.fullName}}</td>
+                <td>{{order.carID}}</td>
+                <td>{{order.car.carNum}}</td>
+                <td>{{order.car.carType.model}}</td>
+                <td>{{order.car.branch.name}}</td>
+                <td>
+                    <a class="btn" (click)="showForEdit(order)">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </a>
+                    <a class="btn text-danger" (click)="onDelete(order.orderID)">
+                        <i class="fa fa-trash-o">delete</i>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

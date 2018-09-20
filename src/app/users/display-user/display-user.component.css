@@ -1,0 +1,18 @@
+.imageClass{
+    width:100px;
+    height:100px;
+    float: left;
+}
+.vertical-align{
+    display: flex;
+    /* align-items: center; */
+
+}
+.container{
+    margin-top: 50px;}
+.card-heading{
+    background-color: rgb(110, 117, 214);
+}
+.card {
+    margin: 50px;
+}

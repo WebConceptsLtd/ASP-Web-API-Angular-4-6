@@ -1,0 +1,113 @@
+<div class="main"><!--benner in home.conponent.css and all styles for the home-->
+  
+
+<div class="container col-md-12 col-sm-12 col-xs-12">
+        <!-- -->
+        <div class="bformBox">
+          <div class="txt1">BOOK YOUR CAR TODAY!</div>
+          <div class="txt2">calculate &amp; book</div>
+          <!-- Form Section -->
+          <form  #orderForm="ngForm" (ngSubmit)="onSubmit(orderForm)">  
+                <input type="hidden" #OrderID="ngModel" name="orderID" [(ngModel)]="orderID" placeholder="OrderID">
+            <div class="formrow">
+                    <select class="form-control" name="model" >
+                            <option *ngFor="let order of orderService.ordersList" [ngValue]="model">{{order.car.carType.model}}</option>
+                     </select>
+   
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="formrow">
+                  <div class="input-group"><span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i> Pick-Up</span>
+                    <select class="form-control" name="brand" >
+                            <option *ngFor="let order of orderService.ordersList" [ngValue]="orderService.ordersList.branchID">{{order.car.branch.name}}</option>
+                        </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="formrow">
+                  <div class="input-group date"style="float:left; margin-right: 25px;" >
+                    <input type="date" class="form-control" #StartDate="ngModel" name="startDate"  [(ngModel)]="startDate" placeholder="StartDate" required><span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i> </span>
+                   </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6">
+                <div class="formrow">
+                  <div class="input-group"> <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i> Drop-Off</span>
+                    <select class="form-control" name="branch" >
+                            <option *ngFor="let order of orderService.ordersList" [ngValue]="orderService.ordersList.name">{{order.car.branch.name}}</option>
+                        </select>
+                  </div>
+                </div>
+              </div>
+             <div class="col-md-6 col-sm-6">
+                <div class="formrow">
+                  <div class="input-group date" style="float:left; margin-right: 25px;" >
+                     <input type="date"class="form-control" #FinishDate="ngModel" name="finishDate"  [(ngModel)]="finishDate" placeholder="FinishDate" required> <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i> </span>
+                  </div>
+                </div> 
+           </div>
+           <div class="form-group row">
+              <div class="col-md-4 col-sm-4">
+                <div class="formrow">
+                        <input  class="form-control" #FullName="ngModel" name="fullName"  [(ngModel)]="fullName" placeholder="Enter Full Name">
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <div class="formrow">
+                  <input type="email" class="form-control" #Email="ngModel" [(ngModel)]="email" placeholder="Your Email" name="email" required>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4">
+                <div class="formrow">
+                  <input type="text" class="form-control" #Phone="ngModel" [(ngModel)]="phone" placeholder="Phone" name="phone" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+                <div class="col-col-lg-12 checkboxcontainer">
+                    <input type="checkbox" name="driverage" id="driver-over-min-age" checked="checked">
+                    <label class="age" for="driver-over-min-age">Driver aged between 23 – 65?</label>
+                </div>
+           
+              <div class="col-col-lg-8">  
+                <button  [disabled]="!orderForm.valid" class="btn" type="submit" >
+                Order Now</button>
+              <!-- <input type="submit" class="btn" value="Submit Car Booking" >-->  
+             </div> 
+           </div>
+           </div> 
+          </form>
+        </div>
+   
+    </div>
+  </div>
+<div id="vikthumbnail_container" class="container-fluid vikthumbnail-container">
+        <div class="vikthumbnail-inner vikthumbnail-grid row">
+            <figure class="col-col-xs-12 col-md-2 black-white"><div><img class="vikthumbnail-img" src="assets/volkswagen.png" alt=""></div></figure>
+            <figure class="col-col-xs-12 col-md-2 black-white"><div><img class="vikthumbnail-img" src="assets/ford.png" alt=""></div></figure>
+            <figure class="col-col-xs-12 col-md-2 black-white"><div><img class="vikthumbnail-img" src="assets/citroen.png" alt=""></div></figure>
+            <figure class="col-col-xs-12 col-md-2 black-white"><div><img class="vikthumbnail-img" src="assets/lancia.png" alt=""></div></figure>
+            <figure class="col-col-xs-12 col-md-2 black-white"><div><img class="vikthumbnail-img" src="assets/renault.png" alt=""></div></figure>
+            <figure class="col-col-xs-12 col-md-2 black-white"><div><img class="vikthumbnail-img" src="assets/land-rover.png" alt=""></div></figure>	
+        </div>
+    </div>
+    <div class="page-title">
+     <div class="block-info">
+         <div class="header-text">About our<br>company</div>
+              <div class="breadcrumbs1_wrapper">
+                <div class="">
+                  <div class="breadcrumbs1"><a [routerLink]="'/search-car'">Search</a><span>/</span><a  [routerLink]="'/about'">About Us</a><span>/</span>Who We Are</div>
+                </div>
+              </div>
+         </div>
+            <div class="block-image">
+              <img src="assets/header1.jpg"  class="img-responsive">
+            </div>
+        
+          <!-- </div> -->
+        
+          

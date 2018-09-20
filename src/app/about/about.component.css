@@ -1,0 +1,42 @@
+.map{margin-top: 20px;
+
+    float: right;}
+.page-title>div {
+    margin-top: 50px;
+    display: table-cell;
+    width: 50%;
+}
+.address{
+   text-align: center;
+   padding-top: 20px;
+    display: inline;
+    
+}
+.page-title {
+    background: #191509;
+    position: relative;
+    display: table;
+    width: 100%;}
+.breadcrumbs1_wrapper {
+    position: relative;
+    margin-top: 0px;
+    padding-bottom: 0px;
+}
+.header-text {
+    font-family: 'Fjalla One';
+    font-size: 40px;
+    padding-left: 5%;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 5%;text-align: center;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}element.style {
+    left: 997px;
+    z-index: 100009;
+    display: block;
+    top: 905px;
+}

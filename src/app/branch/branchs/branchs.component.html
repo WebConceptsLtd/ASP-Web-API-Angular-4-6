@@ -1,0 +1,36 @@
+
+<div class="card rounded-1">
+  
+        <div class="card-header">
+        <h3 class="mb-0">Branch form</h3>
+        </div>
+<div class="card-body">
+            
+        <!-- form card  -->
+ <form  class="form.br" #branchForm="ngForm" (ngSubmit)="onSubmit(branchForm)">
+        <div class="form-group">
+        <div class="row"><input type="hidden" name="branchID" #BranchID="ngModel" [(ngModel)]="branchServ.selectedBranch.branchID" ></div>
+          
+        <div class="row"><input class="form-control" #Name="ngModel" [(ngModel)]="branchServ.selectedBranch.name"  name="name" placeholder="Branch Name" required></div>
+            <div class="validation-error" *ngIf="Name.invalid && Name.touched">This Field is Required</div>
+        </div>
+        <div class="row"><input class="form-control"  #Address="ngModel" [(ngModel)]="branchServ.selectedBranch.address" name="address" placeholder="Address" required></div>
+        <div class="validation-error" *ngIf="Address.invalid && Address.touched">This Field is Required</div>
+        <div class="row"><input class="form-control"  #Latitude="ngModel" [(ngModel)]="branchServ.selectedBranch.latitude"  name="latitude" placeholder="Latitude"></div>
+        <div class="row"><input class="form-control"  #Longtitude="ngModel" [(ngModel)]="branchServ.selectedBranch.longtitude" name="longtitude" placeholder="Longtitude"></div>
+     
+        <div class="panel-footer">
+            <div class="row">
+                <button [disabled]="!branchForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
+            <i class="fa fa floppy-o"></i>
+                Submit</button>
+            </div>
+            <div class="row">
+                <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(branchForm)">
+                    <i class="fa fa-repeat"></i> Reset
+                </button>
+            </div>
+        </div>
+
+ </form>
+

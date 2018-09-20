@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+     
+        <button class="navbar-toggler" type="button"
+         data-toggle="collapse" (click)="isCollapsed = !isCollapsed" 
+         data-target="#navbars"
+         aria-controls="navbars"
+         aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse"  id="navbars" [ngbCollapse]="isCollapsed">
+        <ul class="navbar-nav mr-auto">
+         <!-- <li  class="nav-item" *ngIf="rService.roleMatch(['Admin'])">
+                        <a routerLink="/home1">Admin Panel</a>
+                </li> -->
+                        
+                    <li class="nav-item">
+                     <a routerLink='/home' routerLinkActive="active">Home <span class="sr-only">(current)</span></a>  
+                    </li>
+                
+                    <li class="nav-item">
+                    <a  routerLink='/car-search' routerLinkActive="active">Car Search</a>
+                    </li>
+                        <li class="nav-item">
+                    <a routerLink='/cantact'routerLinkActive="active">Contact Us</a>
+                    </li>
+           
+                    <li class="nav-item">
+                      <a routerLink='/about'routerLinkActive="active">About</a>
+                     </li>
+                    <li class="nav-item">  
+                            <a *ngIf="auth.isAuthenticated" routerLink='/home1'>Admin</a>
+                            
+                    <a *ngIf="isLoggedIn$ | async" routerLink='/home1'>Admin</a>
+                    </li>
+                  
+        </ul>
+        <span style="flex: 1 1 auto"></span>
+       <div class="navbar-nav-right-a">                      
+           <a *ngIf="!auth.isAuthenticated" routerLink="/login" >Login</a>
+               
+           <a *ngIf="!auth.isAuthenticated" routerLink="/register" >Register</a>
+           <a *ngIf="auth.isAuthenticated"  routerLink="/" >Hi {{auth.name}}</a>                                    
+           <a *ngIf="auth.isAuthenticated" (click)="auth.logout()">Logout</a> 
+       </div>
+         
+        
+        </div>
+
+
+</nav>

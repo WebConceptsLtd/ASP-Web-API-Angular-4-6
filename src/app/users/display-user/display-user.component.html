@@ -1,0 +1,88 @@
+<app-home1></app-home1>
+<div class="container">
+                        
+       <div class="form-group">
+            <h3>Seach User by First or Last Name</h3>
+            <input type="text" class="form-control" placeholder="Search By Name"
+                    style="width:300px" [(ngModel)]="searchTerm" />
+        </div>
+        
+        <!-- card -->
+        <div class="row top">
+        <div  class="col-sm-4"  *ngFor="let user of  userService.userList| searchfilter: searchTerm">
+        <div class="card" style="width: 20rem;">
+        <div class="card-heading">
+          <p class="card-title">{{user.userID}}</p>
+        </div>
+        <img class="mr-3 rounded align-self-center img-fluid" 
+      style="width:70px;" [src]="'./assets/' + user.fullName + '_tn.jpg'"/>
+      
+          
+    <div class="card-body">
+    <div class="col-xs-10">
+         <div class="vertical-align">
+              <div class="col-xs-4">
+                  
+                <!-- <img class="imageClass" [src]="user.picPath" /> -->
+              </div>
+              <div class="col-xs-8">
+                    <div class="row">
+                            <div class="col-xs-6">
+                              UserName
+                            </div>
+                            <div class="col-xs-6">
+                              : {{user.userName}}
+                            </div>
+                          </div>
+                    <div class="row">
+                            <div class="col-xs-6">
+                              Full Name
+                            </div>
+                            <div class="col-xs-6">
+                              : {{user.fullName}}
+                            </div>
+                          </div>
+                <div class="row">
+                  <div class="col-xs-6">
+                    Gender
+                  </div>
+                  <div class="col-xs-6">
+                    : {{user.gender}}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6">
+                    Date of Birth
+                  </div>
+                  <div class="col-xs-6">
+                    : {{user.birthday}}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6"> SSN</div>
+                  <div class="col-xs-6"> : {{user.teudatZeut}} </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6">  Phone </div>
+                  <div class="col-xs-6"> : {{user.phone}}  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-6"> Email </div>
+                  <div class="col-xs-6"> : {{user.email}}</div>
+                </div>
+               
+                <div class="row">
+                  <div class="col-xs-6">  Type of User </div>
+                  <div class="col-xs-6">  : {{user.userTypeID}} </div>
+                 </div>
+                 <div class="row">
+                    <div class="col-xs-6">  Role</div>
+                    <div class="col-xs-6">  : {{user.roles}} </div>
+                   </div>
+            </div>
+         </div>
+        </div>
+       
+ </div>
+ </div>
+</div>
